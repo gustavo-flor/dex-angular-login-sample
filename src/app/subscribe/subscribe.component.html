@@ -1,0 +1,17 @@
+<main class="main-container">
+    <h1>Subscribe</h1>
+    <form #subscribeForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="text-input-container">
+            <label for="name">Name</label>
+            <input id="name" type="text" [(ngModel)]="name" name="name" required />
+        </div>
+        <div class="text-input-container">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" [(ngModel)]="email" name="email" required />
+        </div>
+        <app-password-input [(password)]="password" />
+        <app-password-validator [password]="password" />
+    
+        <button type="submit" [disabled]="!subscribeForm.form.valid">Send</button>
+    </form>
+</main>
